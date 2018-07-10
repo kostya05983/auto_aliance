@@ -33,7 +33,7 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Kia Rio Седан 2013 ", R.drawable.kia_hd_change, 650, 460)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Toyota Corolla new 2014", R.drawable.toyota_altis_change, 1050, 740)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Hyundai ix35 4WD 2013", R.drawable.car_ix35_changed, 1050, 800)) //true
-        _mThumbIdsSecondGrid.add(DataCarSecondGrid("Nissan Juke 2013", R.drawable.camry_hybrid_se, 1050, 770)) //no have image
+        _mThumbIdsSecondGrid.add(DataCarSecondGrid("Nissan Juke 2013", R.drawable.mercedes_benz_change, 1050, 770)) //no have image
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Infiniti FX-37 2012", R.drawable.infinity_fx_5_change, 1750, 1550)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("KIA Optima 2013", R.drawable.kia_optima_k5_change, 2100, 1900)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Toyota Camry 2013", R.drawable.camry_hybryd_se_change, 1350, 1250)) //true
