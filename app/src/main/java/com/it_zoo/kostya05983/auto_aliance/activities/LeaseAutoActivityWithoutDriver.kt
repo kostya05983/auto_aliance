@@ -27,20 +27,20 @@ class LeaseAutoActivityWithoutDriver : AbstractNavigation() {
     }
 
     private fun fill() {
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Opel Astra J 1.4 AT 2015 г.в.", R.drawable.opel_astra, 1500))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota Corolla new", R.drawable.toyota_corolla, 1800))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota Camry new", R.drawable.camry_hybrid_se, 2300))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota LC 200 new", R.drawable.car_tayouta, 7100))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Optima new", R.drawable.camry_hybrid_se, 3300))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Rio new", R.drawable.camry_hybrid_se, 1500))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Ceed new", R.drawable.camry_hybrid_se, 1600))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota Prius", R.drawable.camry_hybrid_se, 1500))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai I20  1.4 MT 2016 г.в. ", R.drawable.camry_hybrid_se, 1200))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai Solaris new ", R.drawable.camry_hybrid_se, 1500))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai Tucson new", R.drawable.camry_hybrid_se, 2200))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Cerato new ", R.drawable.camry_hybrid_se, 1800))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota RAV4", R.drawable.camry_hybrid_se, 2300))
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Sportage new", R.drawable.camry_hybrid_se, 2500))
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Opel Astra J 1.4 AT 2015 г.в.", R.drawable.opel_astra_change, 1500)) // true
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota Corolla new", R.drawable.toyota_corolla_change, 1800)) // true
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota Camry new", R.drawable.camry_hybryd_se_change, 2300)) // true
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota LC 200 new", R.drawable.toyota_land_cruiser_change, 7100)) // true
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Optima new", R.drawable.camry_hybryd_se_change, 3300)) //no have image of this car?
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Rio new", R.drawable.camry_hybrid_se, 1500)) // no have image of this car?
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Ceed new", R.drawable.camry_hybrid_se, 1600))// no have image of this car?
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota Prius", R.drawable.car_new_prius_change, 1500)) // true
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai I20  1.4 MT 2016 г.в. ", R.drawable.hyunday_i20_change, 1200)) // true
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai Solaris new ", R.drawable.car_solaris_change, 1500)) // true
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai Tucson new", R.drawable.camry_hybrid_se, 2200))// no have image of this car?
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Cerato new ", R.drawable.camry_hybrid_se, 1800))// no have image of this car?
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota RAV4", R.drawable.car_toyota, 2300))// true
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Sportage new", R.drawable.camry_hybrid_se, 2500))// no have image of this car?
 
 
     }
