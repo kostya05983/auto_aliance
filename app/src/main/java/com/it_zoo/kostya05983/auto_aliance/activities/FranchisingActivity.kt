@@ -15,6 +15,11 @@ class FranchisingActivity : AbstractNavigation() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_franchising)
+
+        fillFirstParagraphsCollection()
+        fillSecondParagraphsCollection()
+        fillOfOurPoints()
+        
     }
     private fun fillFirstParagraphsCollection(){
         collectionfirstParagraphs.add(0,
