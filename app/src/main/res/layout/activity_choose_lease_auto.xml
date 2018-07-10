@@ -17,7 +17,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:background="@drawable/button_choose_lease_auto"
-        android:onClick="withDriverOnClick"
+        android:onClick="withoutDriverOnClick"
         android:fontFamily="@font/roboto_thin"
         android:text="@string/lease_auto_str"
         android:textSize="12dp"
@@ -28,7 +28,7 @@
     <Button
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:onClick="withoutDriverOnClick"
+        android:onClick="withDriverOnClick"
         android:layout_gravity="center"
 
         android:layout_marginTop="50dp"

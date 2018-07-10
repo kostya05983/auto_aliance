@@ -23,8 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="2"
-        android:verticalSpacing="35dp"
-        android:horizontalSpacing="5dp"
+        android:verticalSpacing="2dp"
+        android:horizontalSpacing="-8dp"
         android:layout_weight="1"
         >
     </GridView>
