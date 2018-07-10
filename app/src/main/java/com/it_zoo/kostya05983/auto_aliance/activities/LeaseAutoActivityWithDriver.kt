@@ -39,9 +39,9 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Toyota Camry 2013", R.drawable.camry_hybryd_se_change, 1350, 1250)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Toyota Camry New 2015", R.drawable.toyota_camry_hybrid_change, 1410, 1000)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Cadillac Escalade 2012", R.drawable.camry_hybryd_se_change, 2500, 1750)) //true
-        _mThumbIdsSecondGrid.add(DataCarSecondGrid("Hyundai Genesis 2015", R.drawable.camry_hybrid_se, 2500, 2350)) //no have this image
+        _mThumbIdsSecondGrid.add(DataCarSecondGrid("Hyundai Genesis 2015", R.drawable.genesis_change, 2500, 2350)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Infiniti QX56 2013", R.drawable.infinity_change, 2700, 2350)) //true
-        _mThumbIdsSecondGrid.add(DataCarSecondGrid("Mercedes-Benz G500", R.drawable.camry_hybrid_se, 2500, 2200)) //no have this image
+        _mThumbIdsSecondGrid.add(DataCarSecondGrid("Mercedes-Benz G500", R.drawable.mercedes_benz_change, 2500, 2200)) //true
     }
 
     inner class CarViewAdapterSecondGrid(private val mContext: Context) : BaseAdapter() {
