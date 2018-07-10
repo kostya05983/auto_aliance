@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Auto-Aliance</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">settingsActivity</string>
+    <string name="title_activity_auto_parts">AutoPartsActivity</string>
+    <string name="title_activity_lease_auto">LeaseAutoActivity</string>
+    <string name="order_grid_button">Заказать</string>
+    <string name="lease_auto_str">Прокат автомобилей</string>
+    <string name="lease_auto_without_str">Аренда авто с водителем</string>
+</resources>
