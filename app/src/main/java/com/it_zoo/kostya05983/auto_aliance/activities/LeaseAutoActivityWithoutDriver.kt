@@ -23,9 +23,7 @@ class LeaseAutoActivityWithoutDriver : AbstractNavigation() {
         fill()
 
         grid_view_lease_car.adapter = CarViewAdapterFirstGrid(this)
-
         nav_view_lease_car_without_driver.setNavigationItemSelectedListener(this)
-
     }
 
     private fun fill() {

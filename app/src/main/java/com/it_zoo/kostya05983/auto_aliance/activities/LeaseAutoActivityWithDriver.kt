@@ -20,9 +20,11 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lease_auto_with_driver)
+        fill()
 
-        nav_view_lease_car_with_driver.setNavigationItemSelectedListener(this)
         grid_view_lease_car_with_driver.adapter = CarViewAdapterSecondGrid(this)
+        nav_view_lease_car_with_driver.setNavigationItemSelectedListener(this)
+
     }
 
     fun fill() {

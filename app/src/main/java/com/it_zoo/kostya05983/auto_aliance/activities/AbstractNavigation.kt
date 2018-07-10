@@ -15,7 +15,7 @@ abstract class AbstractNavigation : AppCompatActivity(), NavigationView.OnNaviga
         //handle navigation view item here
         when(item.itemId) {
             R.id.nav_lease_auto -> {
-                val intent = Intent(this, LeaseAutoActivityWithDriver::class.java)
+                val intent = Intent(this, ChooseLeaseAutoActivity::class.java)
                 startActivity(intent)
             }
             R.id.nav_buy_your_auto -> {
