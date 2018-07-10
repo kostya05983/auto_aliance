@@ -1,15 +1,20 @@
 package com.it_zoo.kostya05983.auto_aliance.activities
 
+import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFirstSectionUi_Franchising
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFranchisinGrid
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataSecondSectionUi_Franchising
 import com.it_zoo.kostya05983.auto_aliance.R
 
 class FranchisingActivity : AbstractNavigation() {
-    private val collectionfirstParagraphs : MutableList<DataFirstSectionUi_Franchising> = mutableListOf();
-    private val collectionSecondParagraphs : MutableList<DataSecondSectionUi_Franchising> = mutableListOf();
-    private val collectionAgry: MutableList<DataFranchisinGrid> = mutableListOf();
+    private val collectionfirstParagraphs : MutableList<DataFirstSectionUi_Franchising> = mutableListOf()
+    private val collectionSecondParagraphs : MutableList<DataSecondSectionUi_Franchising> = mutableListOf()
+    private val collectionAgry: MutableList<DataFranchisinGrid> = mutableListOf()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +24,7 @@ class FranchisingActivity : AbstractNavigation() {
         fillFirstParagraphsCollection()
         fillSecondParagraphsCollection()
         fillOfOurPoints()
-        
+
     }
     private fun fillFirstParagraphsCollection(){
         collectionfirstParagraphs.add(0,
@@ -143,5 +148,30 @@ class FranchisingActivity : AbstractNavigation() {
                         "Срок договора 12 месяцев с последующей пролонгацией."
                 )
         )
+    }
+
+    inner class FranshingAdapter(private val mContext: Context) : BaseAdapter(){
+        override fun getItemId(p0: Int): Long {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun getCount(): Int {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun getItem(p0: Int): Any {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+            var grid: View
+            if( convertView == null) {
+                grid = View(mContext)
+                val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                grid = inflater.inflate(R.layout.activity_franchising,parent,false)
+            } else {
+                grid = convertView
+            }
+        }
     }
 }
