@@ -150,7 +150,7 @@ class FranchisingActivity : AbstractNavigation() {
         )
     }
 
-    inner class FranshingAdapter(private val mContext: Context) : BaseAdapter(){
+    /*inner class FranshingAdapter(private val mContext: Context) : BaseAdapter(){
         override fun getItemId(p0: Int): Long {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
@@ -173,5 +173,5 @@ class FranchisingActivity : AbstractNavigation() {
                 grid = convertView
             }
         }
-    }
+    }*/
 }
