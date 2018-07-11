@@ -11,17 +11,9 @@ class CitiesActivity : AbstractNavigation() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cities)
 
-//        nav_v
         nav_view_cities.setNavigationItemSelectedListener(this)
     }
 
-//    override fun onBackPressed() {
-//        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-//            drawer_layout.closeDrawer(GravityCompat.START)
-//        } else {
-//            super.onBackPressed()
-//        }
-//    }
 
 
 }
