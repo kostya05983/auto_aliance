@@ -22,17 +22,22 @@
         <activity
             android:name=".activities.SettingsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.RentCarActivity" />
+        <activity android:name=".activities.RentCarActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activities.AutoPartsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.LeaseAutoActivityWithoutDriver"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.BuyYourAutoActivity" />
-        <activity android:name=".activities.FranchisingActivity" />
-        <activity android:name=".activities.LeaseAutoActivityWithDriver" />
-        <activity android:name=".activities.ChooseLeaseAutoActivity"></activity>
+        <activity android:name=".activities.BuyYourAutoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activities.FranchisingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activities.LeaseAutoActivityWithDriver"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activities.ChooseLeaseAutoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

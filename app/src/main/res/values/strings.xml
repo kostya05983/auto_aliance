@@ -17,4 +17,12 @@
     <string name="Download">Скачать</string>
     <string name="auto_parts_header">Автозапчасти по очень выгодным ценам!</string>
     <string name="price_auto_parts">Прайс с автозапчастями</string>
+    <string name="firstHeader_rent_your_auto">Не используете автомобиль? - тогда Вам к нам!</string>
+    <string name="first_advertisment">Не используете автомобиль? - тогда Вам к нам!</string>
+    <string name="second_advertisment">Если слышите об этом впервые, то обратите внимание!</string>
+    <string name="third_advertisment">Забрали права, а автомобиль стоит? - Звоните!</string>
+    <string name="fourth_advertisment">Кредитные тяжбы, запрет на регистрационные действия? - Не беда, звоните!</string>
+    <string name="fifth_advertisment">Есть долги, давно не делали приобретения? - Звоните, поможем!</string>
+    <string name="why_we">Почему мы?</string>
+
 </resources>
