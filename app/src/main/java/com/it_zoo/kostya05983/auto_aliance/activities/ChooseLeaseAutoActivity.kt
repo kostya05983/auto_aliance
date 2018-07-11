@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.it_zoo.kostya05983.auto_aliance.R
+import kotlinx.android.synthetic.main.activity_choose_lease_auto.*
 
-class ChooseLeaseAutoActivity : AppCompatActivity() {
+class ChooseLeaseAutoActivity : AbstractNavigation() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_lease_auto)
+        nav_view_choose_lease_auto.setNavigationItemSelectedListener(this)
     }
 
     fun withDriverOnClick(view: View) {

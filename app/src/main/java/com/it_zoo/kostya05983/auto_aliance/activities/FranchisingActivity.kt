@@ -9,6 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFranchisinGrid
 import com.it_zoo.kostya05983.auto_aliance.R
+import kotlinx.android.synthetic.main.activity_franchising.*
 
 class FranchisingActivity : AbstractNavigation() {
     private val collectionAgry: MutableList<DataFranchisinGrid> = mutableListOf()
@@ -21,7 +22,7 @@ class FranchisingActivity : AbstractNavigation() {
         fillFirstParagraphsCollection()
         fillSecondParagraphsCollection()
         fillOfOurPoints()
-
+        nav_view_franchising.setNavigationItemSelectedListener(this)
     }
     private fun fillCollection() {
         this.collectionAgry.add(0,
