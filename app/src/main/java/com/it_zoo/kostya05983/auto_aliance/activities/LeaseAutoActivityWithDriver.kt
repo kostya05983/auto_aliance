@@ -62,7 +62,7 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
             nameTextView.text = mThumbIdsSecondGrid[position].name
 
             val priceTextView = grid.findViewById<TextView>(R.id.grid_second_price_car)
-            priceTextView.text = String.format("Цена: %s руб/ч (до 6 ч.) | %s руб/ч (свыше 6 ч.)",mThumbIdsSecondGrid[position].priceToSix,mThumbIdsSecondGrid[position].priceAfterSix.toString())
+            priceTextView.text = String.format("Цена: %s руб/ч  (до 6 ч.) \n%s руб/ч (свыше 6 ч.)",mThumbIdsSecondGrid[position].priceToSix,mThumbIdsSecondGrid[position].priceAfterSix.toString())
 
             return grid
         }

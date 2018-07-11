@@ -33,8 +33,6 @@
 
         android:layout_marginTop="50dp"
         android:textColor="@color/colorblack"
-
-
         android:textSize="12dp"
         android:fontFamily="@font/roboto_thin"
 
