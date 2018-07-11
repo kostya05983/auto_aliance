@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/title_1"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_marginTop="5dp"
@@ -17,79 +17,62 @@
         tools:fontFamily="@font/roboto_light"
         tools:textSize="25dp"
 
-        android:text='' />
+        android:text='Пакет \"Инвестор\"' />
 
     <TextView
-        android:id="@+id/subtitle_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_marginBottom="5dp"
-        tools:layout_marginLeft="10dp"
-        tools:textColor="@color/colorblack"
-        tools:fontFamily="@font/roboto_light"
-        tools:textSize="25sp"
-
-        android:text="" />
-
-    <ListView
-        android:id="@+id/section1_list_1"
-        android:layout_width="match_parent"
-        tools:layout_margin="5dp"
-        android:layout_height="118dp" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:fontFamily="@font/roboto_light"
-        tools:layout_marginLeft="55dp"
-        tools:textColor="@color/colorblack"
-        android:text="@string/additional_list_section" />
-
-    <ListView
-        android:id="@+id/section2_list_1"
-        android:layout_width="match_parent"
-        tools:layout_margin="5dp"
-        android:layout_height="119dp" />
-
-    <TextView
-        android:id="@+id/price_1"
+        android:id="@+id/section_1_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_marginTop="10dp"
+        tools:layout_marginRight="10dp"
         tools:textColor="@color/colorblack"
-        tools:fontFamily="@font/roboto_medium"
-        tools:layout_marginLeft="5dp"
+        tools:fontFamily="@font/roboto_lightitalic"
+        tools:layout_marginLeft="10dp"
         tools:layout_marginBottom="10dp"
         android:text="" />
 
     <TextView
-        android:id="@+id/royal_1"
+        android:id="@+id/section_2_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:layout_marginTop="10dp"
+        tools:layout_marginRight="10dp"
+        tools:textColor="@color/colorblack"
+        tools:fontFamily="@font/roboto_lightitalic"
+        tools:layout_marginLeft="10dp"
         tools:layout_marginBottom="10dp"
-        tools:fontFamily="@font/roboto_medium"
-        tools:textColor="@color/colorblack"
-        tools:layout_marginLeft="5dp"
         android:text="" />
-
     <TextView
-        android:id="@+id/addition_1"
+        android:id="@+id/section_3_3"
         android:layout_width="match_parent"
-        tools:textColor="@color/colorblack"
         android:layout_height="wrap_content"
-        tools:fontFamily="@font/roboto_mediumitalic"
-        tools:layout_marginLeft="5dp"
+        tools:layout_marginTop="10dp"
+        tools:layout_marginRight="10dp"
+        tools:textColor="@color/colorblack"
+        tools:fontFamily="@font/roboto_lightitalic"
+        tools:layout_marginLeft="10dp"
+        tools:layout_marginBottom="10dp"
+        android:text="" />
+    <TextView
+        android:id="@+id/section_4_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_marginTop="10dp"
+        tools:layout_marginRight="10dp"
+        tools:textColor="@color/colorblack"
+        tools:fontFamily="@font/roboto_lightitalic"
+        tools:layout_marginLeft="10dp"
+        tools:layout_marginBottom="10dp"
         android:text="" />
 
     <Button
-        android:id="@+id/btn_order_1"
+        android:id="@+id/btn_order_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:background="@drawable/button_franchising"
         tools:layout_marginLeft="40dp"
         tools:layout_marginRight="40dp"
-        tools:layout_marginTop="10dp"
+        tools:layout_marginTop="90dp"
         tools:text="@string/ordering"
         tools:textColor="@color/colorWhite"
         />
