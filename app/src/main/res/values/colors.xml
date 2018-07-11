@@ -10,4 +10,6 @@
     <color name="colorName">#3e4249</color>
     <color name="colorOrder">#a4a6a9</color>
     <color name="lightWhite">#fafafa</color>
+    <color name="autoPartsBlockColor">#703d3b3b</color>
+    <color name="blue_auto_parts">#009ad7</color>
 </resources>

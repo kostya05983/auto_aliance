@@ -10,6 +10,7 @@ import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFirstSectionUi_Franch
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFranchisinGrid
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataSecondSectionUi_Franchising
 import com.it_zoo.kostya05983.auto_aliance.R
+import kotlinx.android.synthetic.main.activity_franchising.*
 
 class FranchisingActivity : AbstractNavigation() {
     private val collectionfirstParagraphs : MutableList<DataFirstSectionUi_Franchising> = mutableListOf()
@@ -24,7 +25,7 @@ class FranchisingActivity : AbstractNavigation() {
         fillFirstParagraphsCollection()
         fillSecondParagraphsCollection()
         fillOfOurPoints()
-
+        nav_view_franchising.setNavigationItemSelectedListener(this)
     }
     private fun fillFirstParagraphsCollection(){
         collectionfirstParagraphs.add(0,

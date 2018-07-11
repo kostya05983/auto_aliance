@@ -44,7 +44,7 @@
         tools:fontFamily="@font/roboto_light"
         tools:layout_marginLeft="55dp"
         tools:textColor="@color/colorblack"
-        android:text="@string/additional_list_section" />
+        android:text="хуй" />
 
     <ListView
         android:id="@+id/section2_list_1"

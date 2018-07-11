@@ -12,4 +12,9 @@
     <string name="order_grid_button">Заказать</string>
     <string name="lease_auto_str">Прокат автомобилей</string>
     <string name="lease_auto_without_str">Аренда авто с водителем</string>
+    <string name="auto_parts_text">Без посредников. Автозапчасти в Новосибирске, Кемеров, Томске, Барнауле, Омске. У нас без переплаты
+        Интернет-магазин автозапчастей и аксессуаров для европейских, японских и корейских автомобилей.</string>
+    <string name="Download">Скачать</string>
+    <string name="auto_parts_header">Автозапчасти по очень выгодным ценам!</string>
+    <string name="price_auto_parts">Прайс с автозапчастями</string>
 </resources>
