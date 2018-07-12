@@ -9,6 +9,7 @@
     <color name="main_background_color">#dedfe5</color>
     <color name="price_color">#989898</color>
     <color name="colorName">#3e4249</color>
+    <color name="colorBlockCity">#a03e4249</color>
     <color name="colorOrder">#a4a6a9</color>
     <color name="lightWhite">#fafafa</color>
     <color name="autoPartsBlockColor">#703d3b3b</color>

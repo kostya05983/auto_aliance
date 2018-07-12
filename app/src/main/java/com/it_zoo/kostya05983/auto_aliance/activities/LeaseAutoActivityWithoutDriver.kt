@@ -45,6 +45,16 @@ class LeaseAutoActivityWithoutDriver : AbstractNavigation() {
 
     }
 
+    fun orderWithoutDriver(view: View) {
+        val city = intent.getStringExtra("city")
+        val choice = intent.getStringExtra("choice")
+        val button = view as Button
+        val linearLayout = button.parent as LinearLayout
+        val nameTextView = linearLayout.getChildAt(1)
+        val priceTextView = linearLayout.getChildAt(2)
+        //TODO формируем сообщение и отправляем
+    }
+
 
     inner class CarViewAdapterFirstGrid(private val mContext: Context) : BaseAdapter() {
         @SuppressLint("SetTextI18n")

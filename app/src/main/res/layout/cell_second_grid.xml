@@ -39,6 +39,7 @@
         android:backgroundTint="@color/colorWhite"
 
         android:textColor="@color/colorOrder"
+        android:onClick="orderWithDriver"
 
         android:text="@string/order_grid_button"/>
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_choose_lease_auto.*
 
@@ -17,11 +18,17 @@ class ChooseLeaseAutoActivity : AbstractNavigation() {
 
     fun withDriverOnClick(view: View) {
         val intent = Intent(this,LeaseAutoActivityWithDriver::class.java)
+        val textView = view as TextView
+        intent.putExtra("city",this.intent.getStringExtra("city"))
+        intent.putExtra("choice",textView.text)
         startActivity(intent)
     }
 
     fun withoutDriverOnClick(view:View) {
         val intent = Intent(this,LeaseAutoActivityWithoutDriver::class.java)
+        val textView = view as TextView
+        intent.putExtra("city",this.intent.getStringExtra("city"))
+        intent.putExtra("choice",textView.text)
         startActivity(intent)
     }
 

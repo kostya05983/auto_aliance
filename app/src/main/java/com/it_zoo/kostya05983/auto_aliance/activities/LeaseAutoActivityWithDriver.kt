@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.it_zoo.kostya05983.auto_aliance.DataCarSecondGrid
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_lease_auto_with_driver.*
@@ -42,6 +40,16 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Hyundai Genesis 2015", R.drawable.genesis_change, 2500, 2350)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Infiniti QX56 2013", R.drawable.infinity_change, 2700, 2350)) //true
         _mThumbIdsSecondGrid.add(DataCarSecondGrid("Mercedes-Benz G500", R.drawable.mercedes_benz_change, 2500, 2200)) //true
+    }
+
+    fun orderWithDriver(view: View) {
+        val city = intent.getStringExtra("city")
+        val choice = intent.getStringExtra("choice")
+        val button = view as Button
+        val linearLayout = button.parent as LinearLayout
+        val nameTextView = linearLayout.getChildAt(1)
+        val priceTextView = linearLayout.getChildAt(2)
+        //TODO формируем сообщение и отправляем
     }
 
     inner class CarViewAdapterSecondGrid(private val mContext: Context) : BaseAdapter() {

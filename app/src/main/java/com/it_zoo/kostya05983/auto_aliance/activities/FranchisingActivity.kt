@@ -19,9 +19,9 @@ class FranchisingActivity : AbstractNavigation() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_franchising)
 
-        fillFirstParagraphsCollection()
-        fillSecondParagraphsCollection()
-        fillOfOurPoints()
+//        fillFirstParagraphsCollection()
+//        fillSecondParagraphsCollection()
+//        fillOfOurPoints()
         nav_view_franchising.setNavigationItemSelectedListener(this)
     }
     private fun fillCollection() {
