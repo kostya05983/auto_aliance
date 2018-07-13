@@ -9,7 +9,6 @@ class BuyYourAutoActivity : AbstractNavigation() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_your_auto)
-
         nav_view_buy_your_auto.setNavigationItemSelectedListener(this)
     }
 }

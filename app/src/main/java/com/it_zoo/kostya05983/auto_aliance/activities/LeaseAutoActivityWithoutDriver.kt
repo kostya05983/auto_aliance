@@ -2,7 +2,11 @@ package com.it_zoo.kostya05983.auto_aliance.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
+import android.telephony.TelephonyManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +14,7 @@ import android.widget.*
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_lease_auto_without_driver.*
 import com.it_zoo.kostya05983.auto_aliance.DataCarFirstGrid
+import com.it_zoo.kostya05983.auto_aliance.Mail
 
 class LeaseAutoActivityWithoutDriver : AbstractNavigation() {
     private val _mThumbIdsFirstGrid: MutableList<DataCarFirstGrid> = mutableListOf();
@@ -50,9 +55,27 @@ class LeaseAutoActivityWithoutDriver : AbstractNavigation() {
         val choice = intent.getStringExtra("choice")
         val button = view as Button
         val linearLayout = button.parent as LinearLayout
-        val nameTextView = linearLayout.getChildAt(1)
-        val priceTextView = linearLayout.getChildAt(2)
+        val nameTextView = linearLayout.getChildAt(1) as TextView
+        val priceTextView = linearLayout.getChildAt(2) as TextView
         //TODO формируем сообщение и отправляем
+        val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        if ( ContextCompat.checkSelfPermission( this, android.Manifest.permission.READ_PHONE_STATE ) == PackageManager.PERMISSION_GRANTED ) {
+            val line1Number = telephonyManager.line1Number
+
+            val message = String.format("Город=%s,\nВыбрано=%s,\nНазвание автомобиля=%s\nЦена = %s\nТелефон=%s",
+                    city,choice,nameTextView.text,priceTextView.text,line1Number)
+            Thread(Runnable {
+                val mail = Mail()
+                mail.set_to(arrayOf("kostya05983@mail.ru"))
+                mail.send(message)
+
+            }).start()
+            ActivityCompat.requestPermissions( this, arrayOf( android.Manifest.permission.READ_PHONE_STATE) ,
+                    2)
+        } else {
+            ActivityCompat.requestPermissions( this, arrayOf( android.Manifest.permission.READ_PHONE_STATE) ,
+                    2)
+        }
     }
 
 
