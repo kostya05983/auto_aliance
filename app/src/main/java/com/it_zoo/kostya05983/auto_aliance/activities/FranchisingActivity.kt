@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.CheckBox
-import android.widget.TextView
+import android.widget.*
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFranchisinGrid
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_franchising.*
@@ -21,6 +19,8 @@ class FranchisingActivity : AbstractNavigation() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_franchising)
 
+
+        acrivity_franchising.adapter = FranshingAdapterListActivity(this)
         fillCollection()
         nav_view_franchising.setNavigationItemSelectedListener(this)
     }
@@ -126,6 +126,90 @@ class FranchisingActivity : AbstractNavigation() {
                 )
         )
 
+    }
+
+    inner class FranshingAdapterListActivity(private val mContext: Context) : BaseAdapter() {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var gridMain: View
+            if( convertView == null) {
+                gridMain = View(mContext)
+                val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+                when(position){
+                    0,1 -> {
+                        gridMain = inflater.inflate(R.layout.franshing_cell_grid,parent,false)
+                    }
+                    2->{
+                        gridMain = inflater.inflate(R.layout.franshing_cell_grid_2,parent,false)
+                    }
+                    3 ->{
+                        gridMain = inflater.inflate(R.layout.franshing_cell_grid_3,parent,false)
+                    }
+                }
+
+            } else {
+                gridMain = convertView
+            }
+
+            when(position){
+                0,1->{
+                    val linerLayout = gridMain as LinearLayout
+
+                    val title_1 = linerLayout.getChildAt(0) as TextView
+                    val subtitle_1 = linerLayout.getChildAt(1) as TextView
+                    val listSectionFirst = linerLayout.getChildAt(2) as ListView
+                    val titleBetwenSection = linerLayout.getChildAt(3) as TextView
+                    val listSectionSecond = linerLayout.getChildAt(4) as ListView
+                    val price_1 = linerLayout.getChildAt(5) as TextView
+                    val fixprice = linerLayout.getChildAt(6) as TextView
+                    val additionalInfo = linerLayout.getChildAt(7) as TextView
+
+                    title_1.text = collectionAgry[position].Title
+                    subtitle_1.text = collectionAgry[position].SubTitle
+                    listSectionFirst.adapter = FranshingAdapterListSection1(position, linerLayout.context)
+                    titleBetwenSection.text = collectionAgry[position].additionBetwenSections;
+                    listSectionSecond.adapter = FranshingAdapterListSection2(position, linerLayout.context)
+                    price_1.text = collectionAgry[position].PaushPrice
+                    fixprice.text = collectionAgry[position].FixPrice
+
+                    additionalInfo.text = if(collectionAgry[position].additionInfo!= null) collectionAgry[position].additionInfo else ""
+                }
+                2->{
+                    val linerLayout = gridMain as LinearLayout
+
+                    val title_1 = linerLayout.getChildAt(0) as TextView
+                    val subtitle_1 = linerLayout.getChildAt(1) as TextView
+                    val listSection = linerLayout.getChildAt(2) as ListView
+                    val price_1 = linerLayout.getChildAt(5) as TextView
+                    val fixprice = linerLayout.getChildAt(6) as TextView
+                    val additionalInfo = linerLayout.getChildAt(7) as TextView
+
+                    title_1.text = collectionAgry[position].Title
+                    subtitle_1.text = collectionAgry[position].SubTitle
+                    listSection.adapter = FranshingAdapterListSection1(position, linerLayout.context)
+                    price_1.text = collectionAgry[position].PaushPrice
+                    fixprice.text = collectionAgry[position].FixPrice
+                    additionalInfo.text = collectionAgry[position].additionInfo
+                }
+                3->{
+                    val linerLayout = gridMain as LinearLayout
+
+                    val title = linerLayout.getChildAt(0) as TextView
+                    val listInvestor = linerLayout.getChildAt(1) as ListView
+
+                    title.text = collectionAgry[position].Title
+                    listInvestor.adapter = FranshingAdapterInvestor(position, linerLayout.context)
+                }
+            }
+
+            return gridMain
+        }
+
+        override fun getItem(p0: Int): Any? = null
+
+        override fun getItemId(p0: Int): Long = 0L
+
+        override fun getCount(): Int = collectionAgry.size
     }
 
     inner class FranshingAdapterListSection1(private val index: Int, private val mContext: Context) : BaseAdapter() {
