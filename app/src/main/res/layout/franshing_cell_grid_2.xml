@@ -75,7 +75,7 @@
         tools:layout_marginLeft="40dp"
         tools:layout_marginRight="40dp"
         tools:layout_marginTop="10dp"
-        tools:text="@string/ordering"
+        tools:text="@string/order_grid_button"
         tools:textColor="@color/colorWhite"
         />
 

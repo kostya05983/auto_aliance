@@ -8,6 +8,16 @@
                                         android:fitsSystemWindows="true"
                                         tools:openDrawer="start">
 
+    <ScrollView
+        android:id="@+id/scroll_activity_fran"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <ListView
+            android:id="@+id/acrivity_franchising"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </ScrollView>
 
     <android.support.design.widget.NavigationView
             android:id="@+id/nav_view_franchising"
@@ -17,5 +27,7 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
             app:menu="@menu/activity_main_drawer" />
+
+
 
 </android.support.v4.widget.DrawerLayout>
