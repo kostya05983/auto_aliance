@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.CheckBox
 import android.widget.TextView
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFranchisinGrid
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_franchising.*
+import org.w3c.dom.Text
 
 class FranchisingActivity : AbstractNavigation() {
     private val collectionAgry: MutableList<DataFranchisinGrid> = mutableListOf()
@@ -126,18 +128,74 @@ class FranchisingActivity : AbstractNavigation() {
 
     }
 
-    inner class FranshingAdapter1(private val mContext: Context) : BaseAdapter() {
+    inner class FranshingAdapterListSection1(private val index: Int, private val mContext: Context) : BaseAdapter() {
+        private val indexOfBlock: Int = index
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var gridMain: View
             if( convertView == null) {
                 gridMain = View(mContext)
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                gridMain = inflater.inflate(R.layout.franshing_cell_grid,parent,false)
+                gridMain = inflater.inflate(R.layout.fashing_cell_item_list,parent,false)
+            } else {
+                gridMain = convertView
+            }
+            val checkBox = gridMain.findViewById<CheckBox>(R.id.checkBox)
+            checkBox.isChecked = true;
+
+            val item = gridMain.findViewById<TextView>(R.id.city_choose)
+            item.text = collectionAgry[indexOfBlock].sectionFirst!![position]
+
+            return gridMain
+        }
+
+        override fun getItem(p0: Int): Any? = null
+
+        override fun getItemId(p0: Int): Long = 0L
+
+        override fun getCount(): Int = collectionAgry[indexOfBlock].sectionFirst!!.size
+    }
+
+    inner class FranshingAdapterListSection2(private val index: Int, private val mContext: Context) : BaseAdapter() {
+        private val indexOfBlock: Int = index
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var gridMain: View
+            if( convertView == null) {
+                gridMain = View(mContext)
+                val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                gridMain = inflater.inflate(R.layout.fashing_cell_item_list,parent,false)
             } else {
                 gridMain = convertView
             }
 
+            val checkBox = gridMain.findViewById<CheckBox>(R.id.checkBox)
+            checkBox.isChecked = true;
 
+            val item = gridMain.findViewById<TextView>(R.id.city_choose)
+            item.text = collectionAgry[indexOfBlock].sectionSecond!![position]
+
+            return gridMain
+        }
+
+        override fun getItem(p0: Int): Any? = null
+
+        override fun getItemId(p0: Int): Long = 0L
+
+        override fun getCount(): Int = collectionAgry[indexOfBlock].sectionSecond!!.size
+    }
+
+    inner class FranshingAdapterInvestor(private val index: Int, private val mContext: Context) : BaseAdapter() {
+        private val indexOfBlock: Int = index
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var gridMain: View
+            if( convertView == null) {
+                gridMain = View(mContext)
+                val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                gridMain = inflater.inflate(R.layout.franshing_cell_item_investor,parent,false)
+            } else {
+                gridMain = convertView
+            }
+            val elemet = gridMain.findViewById<TextView>(R.id.investor_item)
+            elemet.text = collectionAgry[indexOfBlock].listInfoInvestor!![position]
 
 
             return gridMain
@@ -147,78 +205,6 @@ class FranchisingActivity : AbstractNavigation() {
 
         override fun getItemId(p0: Int): Long = 0L
 
-        override fun getCount(): Int = mThumbIdsSecondGrid.size
-    }
-    inner class FranshingAdapter2(private val mContext: Context) : BaseAdapter() {
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            var grid: View
-            if( convertView == null) {
-                grid = View(mContext)
-                val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                grid = inflater.inflate(R.layout.franshing_cell_grid_2,parent,false)
-            } else {
-                grid = convertView
-            }
-
-            return grid
-        }
-
-        override fun getItem(p0: Int): Any? = null
-
-        override fun getItemId(p0: Int): Long = 0L
-
-        override fun getCount(): Int = mThumbIdsSecondGrid.size
-    }
-    inner class FranshingAdapter3(private val mContext: Context) : BaseAdapter() {
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            var grid: View
-            if( convertView == null) {
-                grid = View(mContext)
-                val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                grid = inflater.inflate(R.layout.franshing_cell_grid_3,parent,false)
-            } else {
-                grid = convertView
-            }
-
-            val title_1 = grid.findViewById<TextView>(R.id.grid_second_image_part)
-            imageView.setImageResource(mThumbIdsSecondGrid[position].id)
-
-            val nameTextView = grid.findViewById<TextView>(R.id.grid_second_name_car)
-            nameTextView.text = mThumbIdsSecondGrid[position].name
-
-            val priceTextView = grid.findViewById<TextView>(R.id.grid_second_price_car)
-            priceTextView.text = String.format("Цена: %s руб/ч  (до 6 ч.) \n%s руб/ч (свыше 6 ч.)",mThumbIdsSecondGrid[position].priceToSix,mThumbIdsSecondGrid[position].priceAfterSix.toString())
-
-            return grid
-        }
-
-        override fun getItem(p0: Int): Any? = null
-
-        override fun getItemId(p0: Int): Long = 0L
-
-        override fun getCount(): Int = mThumbIdsSecondGrid.size
-    }
-    inner class FranshingAdapterListElement(private val mContext: Context): BaseAdapter(){
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            var grid: View
-            if( convertView == null) {
-                grid = View(mContext)
-                val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                grid = inflater.inflate(R.layout.fashing_cell_item_list,parent,false)
-            } else {
-                grid = convertView
-            }
-
-            val text = grid.findViewById<TextView>(R.id.item_section_ui)
-            text.text = collectionfirstParagraphs[position];
-
-            return grid
-        }
-
-        override fun getItem(p0: Int): Any? = null
-
-        override fun getItemId(p0: Int): Long = 0L
-
-        override fun getCount(): Int = collectionfirstParagraphs.size
+        override fun getCount(): Int = collectionAgry[indexOfBlock].listInfoInvestor!!.size
     }
 }
