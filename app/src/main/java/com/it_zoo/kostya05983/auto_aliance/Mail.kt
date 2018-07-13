@@ -12,6 +12,7 @@ import javax.activation.MailcapCommandMap
 import javax.mail.*
 import javax.mail.internet.MimeBodyPart
 import javax.mail.internet.MimeMultipart
+import javax.xml.transform.OutputKeys.ENCODING
 
 
 class Mail :Authenticator() {
@@ -36,13 +37,13 @@ class Mail :Authenticator() {
     private var _multipart: Multipart? = null
 
     init {
-        _host = "smtp.mail.ru" // default smtp server
+        _host = "smtp.yandex.ru" // default smtp server
         _port = "465" // default smtp port
         _sport = "465" // default socketfactory port
 
-        _user = "kostya05983@mail.ru" // username
-        _pass = "" // password
-        _from = "kostya05983@mail.ru" // email sent from
+        _user = "avtoalians.org@yandex.ru" // username
+        _pass = "qaz123wsx456" // password
+        _from = "avtoalians.org@yandex.ru" // email sent from
         _subject = "Заказ" // email subject
 
         _debuggable = false // debug mode on or off - default off
@@ -62,12 +63,6 @@ class Mail :Authenticator() {
         CommandMap.setDefaultCommandMap(mc)
     }
 
-//    fun Mail(user: String, pass: String): ??? {
-//        this()
-//
-//        _user = user
-//        _pass = pass
-//    }
 
     @Throws(Exception::class)
     fun send(message:String): Boolean {
@@ -88,20 +83,12 @@ class Mail :Authenticator() {
                 addressTo[i] = InternetAddress(_to!![i])
             }
             msg.setRecipients(MimeMessage.RecipientType.TO, addressTo)
+            msg.subject = _subject
 
-            msg.setSubject(_subject)
-            msg.setSentDate(Date())
 
-            // setup message body
-            val messageBodyPart = MimeBodyPart()
-            messageBodyPart.setText(_body)
-            _multipart!!.addBodyPart(messageBodyPart)
+            msg.sentDate = Date()
+            msg.setText(_body)
 
-            msg.setHeader("X-Priority", "1")
-            // Put parts in message
-            msg.setContent(_multipart!!)
-
-            // send email
             Transport.send(msg)
 
             return true
@@ -127,21 +114,23 @@ class Mail :Authenticator() {
     private fun _setProperties(): Properties {
         val props = Properties()
 
-        props.put("mail.smtp.host", _host)
+        props["mail.smtp.port"] = _port
+        props["mail.smtp.host"] = _host
 
-        if (_debuggable) {
-            props.put("mail.debug", "true")
-        }
+        if (_debuggable)
+            props["mail.debug"] = "true"
 
-        if (_auth) {
-            props.put("mail.smtp.auth", "true")
-        }
 
-        props.put("mail.smtp.port", _port)
-        props.put("mail.smtp.socketFactory.port", _sport)
-        props.put("mail.smtp.socketFactory.class",
-                "javax.net.ssl.SSLSocketFactory")
-        props.put("mail.smtp.socketFactory.fallback", "false")
+        if (_auth)
+            props["mail.smtp.auth"] = "true"
+
+
+
+        props["mail.smtp.socketFactory.port"] = _sport
+        props["mail.smtp.socketFactory.class"] = "javax.net.ssl.SSLSocketFactory"
+        props["mail.smtp.starttls.enable"] = "true"
+        //props["mail.smtp.socketFactory.fallback"] = "false"
+        props["mail.mime.charset"] = ENCODING
 
         return props
     }

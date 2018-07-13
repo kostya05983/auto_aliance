@@ -59,12 +59,12 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
         if ( ContextCompat.checkSelfPermission( this, android.Manifest.permission.READ_PHONE_STATE ) == PackageManager.PERMISSION_GRANTED ) {
             val line1Number = telephonyManager.line1Number
 
-            val message = String.format("Город=%s,\nВыбрано=%s,\nНазвание автомобиля=%s\nЦена = %s\nТелефон=%s",
+            val message = String.format("Город: %s,\nВыбрано: %s,\nНазвание автомобиля: %s\nЦена: %s\nТелефон: %s",
                     city,choice,nameTextView.text,priceTextView.text,line1Number)
             //TODO формируем сообщение и отправляем
             Thread(Runnable {
                 val mail = Mail()
-                mail.set_to(arrayOf("kostya05983@mail.ru"))
+                mail.set_to(arrayOf("avtoalians.org@yandex.ru"))
                 mail.send(message)
 
             }).start()
