@@ -7,20 +7,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/city_icon" />
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/city_icon"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="5dp"
+            />
 
         <TextView
             android:id="@+id/city_choose"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"
-            android:background="@color/colorWhite"
             android:fontFamily="@font/roboto_regular"
             android:onClick="chooseCity"
             android:paddingBottom="20dp"
@@ -28,7 +32,8 @@
             android:text="Хороший заработок"
             android:textAlignment="center"
             android:textColor="@color/colorblack"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:paddingLeft="20dp"/>
 
     </LinearLayout>
 

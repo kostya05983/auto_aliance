@@ -19,14 +19,14 @@ class FranchisingActivity : AbstractNavigation() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_franchising)
 
-
-        acrivity_franchising.adapter = FranshingAdapterListActivity(this)
         fillCollection()
+        acrivity_franchising.adapter = FranshingAdapterListActivity(this)
+
         nav_view_franchising.setNavigationItemSelectedListener(this)
     }
 
     private fun fillCollection() {
-        this.collectionAgry.add(0,
+        this.collectionAgry.add(
                 DataFranchisinGrid(
                         "\"Авто 99\"",
                         "Стоимость 99 000 рублей",
@@ -54,7 +54,7 @@ class FranchisingActivity : AbstractNavigation() {
         )
 
 
-        this.collectionAgry.add(1,
+        this.collectionAgry.add(
                 DataFranchisinGrid(
                         "\"Авто 149\"",
                         "Стоимость 149 000 рублей",
@@ -83,7 +83,7 @@ class FranchisingActivity : AbstractNavigation() {
                         null
                         )
         )
-        this.collectionAgry.add(2,
+        this.collectionAgry.add(
                 DataFranchisinGrid(
                         "\"Авто 249\"",
                         "Стоимость 249 000 рублей",
@@ -107,7 +107,7 @@ class FranchisingActivity : AbstractNavigation() {
                 )
         )
 
-        this.collectionAgry.add(3,
+        this.collectionAgry.add(
                 DataFranchisinGrid(
                         "\"Инвестор\"",
                         null,
@@ -131,7 +131,7 @@ class FranchisingActivity : AbstractNavigation() {
     inner class FranshingAdapterListActivity(private val mContext: Context) : BaseAdapter() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var gridMain: View
-            if( convertView == null) {
+
                 gridMain = View(mContext)
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
@@ -147,9 +147,7 @@ class FranchisingActivity : AbstractNavigation() {
                     }
                 }
 
-            } else {
-                gridMain = convertView
-            }
+
 
             when(position){
                 0,1->{
@@ -180,9 +178,9 @@ class FranchisingActivity : AbstractNavigation() {
                     val title_1 = linerLayout.getChildAt(0) as TextView
                     val subtitle_1 = linerLayout.getChildAt(1) as TextView
                     val listSection = linerLayout.getChildAt(2) as ListView
-                    val price_1 = linerLayout.getChildAt(5) as TextView
-                    val fixprice = linerLayout.getChildAt(6) as TextView
-                    val additionalInfo = linerLayout.getChildAt(7) as TextView
+                    val price_1 = linerLayout.getChildAt(3) as TextView
+                    val fixprice = linerLayout.getChildAt(4) as TextView
+                    val additionalInfo = linerLayout.getChildAt(5) as TextView
 
                     title_1.text = collectionAgry[position].Title
                     subtitle_1.text = collectionAgry[position].SubTitle
@@ -274,11 +272,13 @@ class FranchisingActivity : AbstractNavigation() {
             if( convertView == null) {
                 gridMain = View(mContext)
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                gridMain = inflater.inflate(R.layout.franshing_cell_item_investor,parent,false)
+                gridMain = inflater.inflate(R.layout.franshing_cell_grid_3,parent,false)
             } else {
                 gridMain = convertView
             }
-            val elemet = gridMain.findViewById<TextView>(R.id.investor_item)
+            val linearLayout = gridMain as LinearLayout
+
+            val elemet = linearLayout.getChildAt(0) as TextView
             elemet.text = collectionAgry[indexOfBlock].listInfoInvestor!![position]
 
 
