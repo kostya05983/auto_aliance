@@ -45,9 +45,9 @@
         android:background="@drawable/button_franchising"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:text="@string/order_grid_button"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="30dp"
         android:textColor="@color/colorWhite"
         android:onClick="orderingMethod"
         />
