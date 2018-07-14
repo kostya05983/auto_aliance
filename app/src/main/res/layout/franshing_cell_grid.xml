@@ -121,6 +121,7 @@
         android:layout_marginBottom="25dp"
         android:text="@string/order_grid_button"
         android:textColor="@color/colorWhite"
+        android:onClick="orderingMethod"
         />
 
 </LinearLayout>
