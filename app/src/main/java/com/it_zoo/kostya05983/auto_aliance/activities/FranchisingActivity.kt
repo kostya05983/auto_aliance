@@ -195,6 +195,7 @@ class FranchisingActivity : AbstractNavigation() {
 
                     val title = linerLayout.getChildAt(0) as TextView
                     val listInvestor = linerLayout.getChildAt(1) as ListView
+                    listInvestor.dividerHeight = 0
 
                     title.text = collectionAgry[position].Title
                     listInvestor.adapter = FranshingAdapterInvestor(position, linerLayout.context)
