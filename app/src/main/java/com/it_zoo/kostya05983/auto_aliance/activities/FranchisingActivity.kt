@@ -1,10 +1,15 @@
 package com.it_zoo.kostya05983.auto_aliance.activities
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
+import android.telephony.TelephonyManager
 import android.view.*
 import android.widget.*
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFranchisinGrid
+import com.it_zoo.kostya05983.auto_aliance.Mail
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_franchising.*
 import kotlinx.android.synthetic.main.franshing_cell_grid_3.*
@@ -130,6 +135,34 @@ class FranchisingActivity : AbstractNavigation() {
                 )
         )
 
+    }
+
+    fun orderingMethod(view: View){
+        val linerlayout = view.parent as LinearLayout
+
+        val title = linerlayout.getChildAt(0) as TextView
+        val textTitle = title.text;
+        val city = intent.getStringExtra("city")
+
+        val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        if ( ContextCompat.checkSelfPermission( this, android.Manifest.permission.READ_PHONE_STATE ) == PackageManager.PERMISSION_GRANTED ) {
+            val line1Number = telephonyManager.line1Number
+
+            val message = String.format("Город: %s,\nВыбрано: %s,\nТелефон: %s",
+                    city,textTitle,line1Number)
+            //TODO формируем сообщение и отправляем
+            Thread(Runnable {
+                val mail = Mail()
+                mail.set_to(arrayOf("avtoalians.org@yandex.ru"))
+                mail.send(message)
+
+            }).start()
+            ActivityCompat.requestPermissions( this, arrayOf( android.Manifest.permission.READ_PHONE_STATE) ,
+                    2)
+        } else {
+            ActivityCompat.requestPermissions( this, arrayOf( android.Manifest.permission.READ_PHONE_STATE) ,
+                    2)
+        }
     }
 
     inner class FranshingAdapterListActivity(private val mContext: Context) : BaseAdapter() {
