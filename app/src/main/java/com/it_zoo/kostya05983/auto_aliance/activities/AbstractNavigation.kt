@@ -15,35 +15,45 @@ abstract class AbstractNavigation : AppCompatActivity(), NavigationView.OnNaviga
         //handle navigation view item here
         when(item.itemId) {
             R.id.nav_lease_auto -> {
+                val city = intent.getStringExtra("city")
                 val intent = Intent(this, ChooseLeaseAutoActivity::class.java)
+                intent.putExtra("city",city)
                 startActivity(intent)
             }
             R.id.nav_buy_your_auto -> {
+                val city = intent.getStringExtra("city")
                 val intent = Intent(this, BuyYourAutoActivity::class.java)
+                intent.putExtra("city",city)
                 startActivity(intent)
             }
             R.id.nav_franchising -> {
+                val city = intent.getStringExtra("city")
                 val intent = Intent(this, FranchisingActivity::class.java)
+                intent.putExtra("city",city)
                 startActivity(intent)
             }
             R.id.nav_rent_car -> {
+                val city = intent.getStringExtra("city")
                 val intent = Intent(this, RentCarActivity::class.java)
+                intent.putExtra("city",city)
                 startActivity(intent)
             }
             R.id.nav_auto_parts -> {
+                val city = intent.getStringExtra("city")
                 val intent = Intent(this, AutoPartsActivity::class.java)
+                intent.putExtra("city",city)
                 startActivity(intent)
             }
-//            R.id.nav_settings -> {
-//                val intent = Intent(this, SettingsActivity::class.java)
-//                startActivity(intent)
-//            }
             R.id.nav_view_choose_lease_auto -> {
+                val city = intent.getStringExtra("city")
                 val intent = Intent(this,ChooseLeaseAutoActivity::class.java)
+                intent.putExtra("city",city)
                 startActivity(intent)
             }
             R.id.nav_view_lease_car_with_driver -> {
+                val city = intent.getStringExtra("city")
                 val intent = Intent(this, LeaseAutoActivityWithDriver::class.java)
+                intent.putExtra("city",city)
                 startActivity(intent)
             }
         }

@@ -19,7 +19,6 @@ class CitiesActivity : AbstractNavigation() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_cities)
         fill()
-        nav_view_cities.setNavigationItemSelectedListener(this)
         list_view_choose_city.adapter = CitiesAdapter(this)
 
     }

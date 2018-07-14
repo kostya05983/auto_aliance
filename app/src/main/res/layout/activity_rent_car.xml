@@ -89,7 +89,8 @@
                 android:minHeight="800dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                >
+                android:clickable="false"
+                tools:ignore="NestedScrolling">
 
             </ListView>
             <Button
@@ -98,7 +99,8 @@
                 android:layout_gravity="center"
                 android:background="@drawable/button_auto_parts"
                 android:text="Сдать авто"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="30dp"
+                android:onClick="rentCar"/>
         </LinearLayout>
     </ScrollView>
 

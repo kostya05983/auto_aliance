@@ -35,7 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_auto_parts"
-                android:text="@string/Download"/>
+                android:text="@string/Download"
+                android:onClick="downloadAutoParts"/>
         </LinearLayout>
 
     </LinearLayout>

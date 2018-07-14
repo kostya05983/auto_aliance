@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:clickable="false">
 
     <TextView
         android:layout_width="wrap_content"
@@ -10,17 +11,20 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Хороший заработок"
-        android:id="@+id/header_rent_car"/>
+        android:id="@+id/header_rent_car"
+        android:clickable="false"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="7dp">
+        android:layout_marginTop="7dp"
+        android:clickable="false">
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/ok"
+            android:clickable="false"
             />
         <TextView
             android:layout_width="match_parent"
@@ -30,6 +34,7 @@
             android:fontFamily="@font/roboto_regular"
             android:textSize="12sp"
             android:id="@+id/text_rent_car"
+            android:clickable="false"
             />
     </LinearLayout>
 
