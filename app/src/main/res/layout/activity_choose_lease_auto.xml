@@ -21,7 +21,7 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/lease_auto_str"
         android:textSize="12dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="250dp"
         android:textColor="@color/colorblack"
         />
 
