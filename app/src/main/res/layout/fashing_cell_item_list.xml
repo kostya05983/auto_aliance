@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:buttonTint="@color/colorFranchisingButton"
         android:textColor="@color/colorblack"
+        android:clickable="false"
         />
 
     <TextView

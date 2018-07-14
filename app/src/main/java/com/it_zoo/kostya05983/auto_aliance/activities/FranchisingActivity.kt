@@ -7,6 +7,7 @@ import android.widget.*
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFranchisinGrid
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_franchising.*
+import kotlinx.android.synthetic.main.franshing_cell_grid_3.*
 import org.w3c.dom.Text
 
 class FranchisingActivity : AbstractNavigation() {
@@ -21,7 +22,9 @@ class FranchisingActivity : AbstractNavigation() {
 
 
         fillCollection()
+/*        section_investor.dividerHeight = 0*/
         acrivity_franchising.adapter = FranshingAdapterListActivity(this)
+
 
         nav_view_franchising.setNavigationItemSelectedListener(this)
     }
@@ -29,7 +32,7 @@ class FranchisingActivity : AbstractNavigation() {
     private fun fillCollection() {
         this.collectionAgry.add(
                 DataFranchisinGrid(
-                        "\"Авто 99\"",
+                        "Пакет \"Авто 99\"",
                         "Стоимость 99 000 рублей",
                         mutableListOf(
                                 "Помощь в открытии юридического лица(бухгалтерская и юридическая поддержка на срок договора).",
@@ -57,7 +60,7 @@ class FranchisingActivity : AbstractNavigation() {
 
         this.collectionAgry.add(
                 DataFranchisinGrid(
-                        "\"Авто 149\"",
+                        "Пакет \"Авто 149\"",
                         "Стоимость 149 000 рублей",
                         mutableListOf(
                                 "Помощь в открытии юридического лица(бухгалтерская и юридическая поддержка на срок договора).",
@@ -86,7 +89,7 @@ class FranchisingActivity : AbstractNavigation() {
         )
         this.collectionAgry.add(
                 DataFranchisinGrid(
-                        "\"Авто 249\"",
+                        "Пакет \"Авто 249\"",
                         "Стоимость 249 000 рублей",
                         mutableListOf(
                                 "Помощь в открытии юридического лица(бухгалтерская и юридическая поддержка на срок договора).",
@@ -110,7 +113,7 @@ class FranchisingActivity : AbstractNavigation() {
 
         this.collectionAgry.add(
                 DataFranchisinGrid(
-                        "\"Инвестор\"",
+                        "Пакет \"Инвестор\"",
                         null,
                         null,
                         null,
@@ -156,9 +159,9 @@ class FranchisingActivity : AbstractNavigation() {
 
                     val title_1 = linerLayout.getChildAt(0) as TextView
                     val subtitle_1 = linerLayout.getChildAt(1) as TextView
-                    val listSectionFirst = linerLayout.getChildAt(2) as ListView
+                    val listSectionFirst = (linerLayout.getChildAt(2) as LinearLayout).getChildAt(0) as ListView
                     val titleBetwenSection = linerLayout.getChildAt(3) as TextView
-                    val listSectionSecond = linerLayout.getChildAt(4) as ListView
+                    val listSectionSecond = (linerLayout.getChildAt(4) as LinearLayout).getChildAt(0) as ListView
                     val price_1 = linerLayout.getChildAt(5) as TextView
                     val fixprice = linerLayout.getChildAt(6) as TextView
                     val additionalInfo = linerLayout.getChildAt(7) as TextView
@@ -178,7 +181,7 @@ class FranchisingActivity : AbstractNavigation() {
 
                     val title_1 = linerLayout.getChildAt(0) as TextView
                     val subtitle_1 = linerLayout.getChildAt(1) as TextView
-                    val listSection = linerLayout.getChildAt(2) as ListView
+                    val listSection = (linerLayout.getChildAt(2) as LinearLayout).getChildAt(0) as ListView
                     val price_1 = linerLayout.getChildAt(3) as TextView
                     val fixprice = linerLayout.getChildAt(4) as TextView
                     val additionalInfo = linerLayout.getChildAt(5) as TextView
@@ -194,8 +197,9 @@ class FranchisingActivity : AbstractNavigation() {
                     val linerLayout = gridMain as LinearLayout
 
                     val title = linerLayout.getChildAt(0) as TextView
-                    val listInvestor = linerLayout.getChildAt(1) as ListView
-                    listInvestor.dividerHeight = 0
+
+                    val listInvestor = (linerLayout.getChildAt(1) as LinearLayout).getChildAt(0) as ListView
+
 
                     title.text = collectionAgry[position].Title
                     listInvestor.adapter = FranshingAdapterInvestor(position, linerLayout.context)
@@ -274,7 +278,7 @@ class FranchisingActivity : AbstractNavigation() {
             if( convertView == null) {
                 gridMain = View(mContext)
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                gridMain = inflater.inflate(R.layout.franshing_cell_grid_3,parent,false)
+                gridMain = inflater.inflate(R.layout.franshing_cell_item_investor,parent,false)
             } else {
                 gridMain = convertView
             }
