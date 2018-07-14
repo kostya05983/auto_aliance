@@ -1,5 +1,6 @@
 package com.it_zoo.kostya05983.auto_aliance.activities
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -7,9 +8,13 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_cities.*
+import android.content.DialogInterface
+import android.widget.EditText
+import android.widget.Toast
 
 
 abstract class AbstractNavigation : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         //handle navigation view item here
@@ -59,5 +64,9 @@ abstract class AbstractNavigation : AppCompatActivity(), NavigationView.OnNaviga
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun phoneNumber() {
+
     }
 }

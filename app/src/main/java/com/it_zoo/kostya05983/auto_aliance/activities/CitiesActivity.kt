@@ -3,13 +3,14 @@ package com.it_zoo.kostya05983.auto_aliance.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.*
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_cities.*
 
-class CitiesActivity : AbstractNavigation() {
+class CitiesActivity : AppCompatActivity() {
     private val _mThumbIdsList: MutableList<String> = mutableListOf()
     private val mThumbIdsList: List<String> = _mThumbIdsList
 
@@ -20,7 +21,6 @@ class CitiesActivity : AbstractNavigation() {
         setContentView(R.layout.activity_cities)
         fill()
         list_view_choose_city.adapter = CitiesAdapter(this)
-
     }
 
     private fun fill() {

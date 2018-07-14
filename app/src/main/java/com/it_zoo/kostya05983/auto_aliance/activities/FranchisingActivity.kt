@@ -1,6 +1,8 @@
 package com.it_zoo.kostya05983.auto_aliance.activities
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
@@ -88,7 +90,7 @@ class FranchisingActivity : AbstractNavigation() {
                         null,
                         "Фиксированный роялти: 1 500 рублей/автомобиль.",
                         null
-                        )
+                )
         )
         this.collectionAgry.add(
                 DataFranchisinGrid(
@@ -136,59 +138,66 @@ class FranchisingActivity : AbstractNavigation() {
 
     }
 
-    fun orderingMethod(view: View){
+    fun orderingMethod(view: View) {
         val linerlayout = view.parent as LinearLayout
 
         val title = linerlayout.getChildAt(0) as TextView
         val textTitle = title.text
         val city = intent.getStringExtra("city")
 
-        val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-        if ( ContextCompat.checkSelfPermission( this, android.Manifest.permission.READ_PHONE_STATE ) == PackageManager.PERMISSION_GRANTED ) {
-            val line1Number = telephonyManager.line1Number
+        val alert = AlertDialog.Builder(this)
+        alert.setTitle("Введите номер телефона")
+        alert.setMessage("Номер телефона")
+
+        val input = EditText(this)
+        alert.setView(input)
+
+        alert.setPositiveButton("Ок", DialogInterface.OnClickListener { dialog, whichButton ->
 
             val message = String.format("Город: %s,\nВыбрано: %s,\nТелефон: %s",
-                    city,textTitle,line1Number)
+                    city, textTitle, input.text.toString())
+
             Thread(Runnable {
                 val mail = Mail()
                 mail.set_to(arrayOf("avtoalians.org@yandex.ru"))
                 mail.send(message)
-
             }).start()
-            ActivityCompat.requestPermissions( this, arrayOf( android.Manifest.permission.READ_PHONE_STATE) ,
-                    2)
-        } else {
-            ActivityCompat.requestPermissions( this, arrayOf( android.Manifest.permission.READ_PHONE_STATE) ,
-                    2)
-        }
+
+        })
+
+        alert.setNegativeButton("Отмена", DialogInterface.OnClickListener { dialog, whichButton ->
+            Toast.makeText(this, "Необходимо ввести номер телефона", Toast.LENGTH_SHORT).show()
+        })
+
+        alert.show()
     }
 
     inner class FranshingAdapterListActivity(private val mContext: Context) : BaseAdapter() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var gridMain: View
 
-                gridMain = View(mContext)
-                val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            gridMain = View(mContext)
+            val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-                when(position){
-                    0 -> {
-                        gridMain = inflater.inflate(R.layout.franshing_cell_grid,parent,false)
-                    }
-                    1->{
-                        gridMain = inflater.inflate(R.layout.franshing_cell_grid2,parent,false)
-                    }
-                    2->{
-                        gridMain = inflater.inflate(R.layout.franshing_cell_grid_2,parent,false)
-                    }
-                    3 ->{
-                        gridMain = inflater.inflate(R.layout.franshing_cell_grid_3,parent,false)
-                    }
+            when (position) {
+                0 -> {
+                    gridMain = inflater.inflate(R.layout.franshing_cell_grid, parent, false)
                 }
+                1 -> {
+                    gridMain = inflater.inflate(R.layout.franshing_cell_grid2, parent, false)
+                }
+                2 -> {
+                    gridMain = inflater.inflate(R.layout.franshing_cell_grid_2, parent, false)
+                }
+                3 -> {
+                    gridMain = inflater.inflate(R.layout.franshing_cell_grid_3, parent, false)
+                }
+            }
 
 
 
-            when(position){
-                0,1->{
+            when (position) {
+                0, 1 -> {
                     val linerLayout = gridMain as LinearLayout
 
                     val title_1 = linerLayout.getChildAt(0) as TextView
@@ -210,9 +219,9 @@ class FranchisingActivity : AbstractNavigation() {
                     price_1.text = collectionAgry[position].PaushPrice
                     fixprice.text = collectionAgry[position].FixPrice
 
-                    additionalInfo.text = if(collectionAgry[position].additionInfo!= null) collectionAgry[position].additionInfo else ""
+                    additionalInfo.text = if (collectionAgry[position].additionInfo != null) collectionAgry[position].additionInfo else ""
                 }
-                2->{
+                2 -> {
                     val linerLayout = gridMain as LinearLayout
 
                     val title_1 = linerLayout.getChildAt(0) as TextView
@@ -230,7 +239,7 @@ class FranchisingActivity : AbstractNavigation() {
                     fixprice.text = collectionAgry[position].FixPrice
                     additionalInfo.text = collectionAgry[position].additionInfo
                 }
-                3->{
+                3 -> {
                     val linerLayout = gridMain as LinearLayout
 
                     val title = linerLayout.getChildAt(0) as TextView
@@ -257,10 +266,10 @@ class FranchisingActivity : AbstractNavigation() {
         private val indexOfBlock: Int = index
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var gridMain: View
-            if( convertView == null) {
+            if (convertView == null) {
                 gridMain = View(mContext)
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                gridMain = inflater.inflate(R.layout.fashing_cell_item_list,parent,false)
+                gridMain = inflater.inflate(R.layout.fashing_cell_item_list, parent, false)
             } else {
                 gridMain = convertView
             }
@@ -284,10 +293,10 @@ class FranchisingActivity : AbstractNavigation() {
         private val indexOfBlock: Int = index
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var gridMain: View
-            if( convertView == null) {
+            if (convertView == null) {
                 gridMain = View(mContext)
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                gridMain = inflater.inflate(R.layout.fashing_cell_item_list,parent,false)
+                gridMain = inflater.inflate(R.layout.fashing_cell_item_list, parent, false)
             } else {
                 gridMain = convertView
             }
@@ -312,10 +321,10 @@ class FranchisingActivity : AbstractNavigation() {
         private val indexOfBlock: Int = index
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var gridMain: View
-            if( convertView == null) {
+            if (convertView == null) {
                 gridMain = View(mContext)
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                gridMain = inflater.inflate(R.layout.franshing_cell_item_investor,parent,false)
+                gridMain = inflater.inflate(R.layout.franshing_cell_item_investor, parent, false)
             } else {
                 gridMain = convertView
             }
