@@ -18,7 +18,7 @@
         >
         <LinearLayout
             android:orientation="vertical"
-            android:minHeight="3650dp"
+            android:minHeight="3700dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/main_background_color"
