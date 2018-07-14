@@ -173,8 +173,11 @@ class FranchisingActivity : AbstractNavigation() {
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
                 when(position){
-                    0,1 -> {
+                    0 -> {
                         gridMain = inflater.inflate(R.layout.franshing_cell_grid,parent,false)
+                    }
+                    1->{
+                        gridMain = inflater.inflate(R.layout.franshing_cell_grid2,parent,false)
                     }
                     2->{
                         gridMain = inflater.inflate(R.layout.franshing_cell_grid_2,parent,false)
