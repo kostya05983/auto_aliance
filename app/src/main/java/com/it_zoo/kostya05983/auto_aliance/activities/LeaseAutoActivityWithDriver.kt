@@ -1,6 +1,8 @@
 package com.it_zoo.kostya05983.auto_aliance.activities
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
@@ -54,34 +56,41 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
         val linearLayout = button.parent as LinearLayout
         val nameTextView = linearLayout.getChildAt(1) as TextView
         val priceTextView = linearLayout.getChildAt(2) as TextView
-        val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-        if ( ContextCompat.checkSelfPermission( this, android.Manifest.permission.READ_PHONE_STATE ) == PackageManager.PERMISSION_GRANTED ) {
-            val line1Number = telephonyManager.line1Number
 
+        val alert = AlertDialog.Builder(this)
+
+        alert.setTitle("Введите номер телефона")
+        alert.setMessage("Номер телефона")
+
+        val input = EditText(this)
+        alert.setView(input)
+
+        alert.setPositiveButton("Ок", DialogInterface.OnClickListener { dialog, whichButton ->
             val message = String.format("Город: %s,\nВыбрано: %s,\nНазвание автомобиля: %s\nЦена: %s\nТелефон: %s",
-                    city,choice,nameTextView.text,priceTextView.text,line1Number)
-            //TODO формируем сообщение и отправляем
+                    city, choice, nameTextView.text, priceTextView.text, input.text.toString())
+
             Thread(Runnable {
                 val mail = Mail()
                 mail.set_to(arrayOf("avtoalians.org@yandex.ru"))
                 mail.send(message)
-
             }).start()
-            ActivityCompat.requestPermissions( this, arrayOf( android.Manifest.permission.READ_PHONE_STATE) ,
-                    2)
-        } else {
-            ActivityCompat.requestPermissions( this, arrayOf( android.Manifest.permission.READ_PHONE_STATE) ,
-                    2)
-        }
+
+        })
+
+        alert.setNegativeButton("Отмена", DialogInterface.OnClickListener { dialog, whichButton ->
+            Toast.makeText(this, "Необходимо ввести номер телефона", Toast.LENGTH_SHORT).show()
+        })
+
+        alert.show()
     }
 
     inner class CarViewAdapterSecondGrid(private val mContext: Context) : BaseAdapter() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var grid: View
-            if( convertView == null) {
+            if (convertView == null) {
                 grid = View(mContext)
                 val inflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                grid = inflater.inflate(R.layout.cell_second_grid,parent,false)
+                grid = inflater.inflate(R.layout.cell_second_grid, parent, false)
             } else {
                 grid = convertView
             }
@@ -93,7 +102,7 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
             nameTextView.text = mThumbIdsSecondGrid[position].name
 
             val priceTextView = grid.findViewById<TextView>(R.id.grid_second_price_car)
-            priceTextView.text = String.format("Цена: %s руб/ч  (до 6 ч.) \n%s руб/ч (свыше 6 ч.)",mThumbIdsSecondGrid[position].priceToSix,mThumbIdsSecondGrid[position].priceAfterSix.toString())
+            priceTextView.text = String.format("Цена: %s руб/ч  (до 6 ч.) \n%s руб/ч (свыше 6 ч.)", mThumbIdsSecondGrid[position].priceToSix, mThumbIdsSecondGrid[position].priceAfterSix.toString())
 
             return grid
         }
