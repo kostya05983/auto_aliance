@@ -13,10 +13,6 @@ import kotlinx.android.synthetic.main.activity_auto_parts.*
 
 class AutoPartsActivity : AbstractNavigation() {
 
-    var enqueue: Long = 0
-    lateinit var downloadManager: DownloadManager
-    lateinit var request: DownloadManager.Request
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

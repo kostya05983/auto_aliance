@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:background="@color/main_background_color">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             android:layout_height="wrap_content"
             android:minHeight="740dp"
             android:layout_marginTop="10dp"
-
+            android:background="@color/main_background_color"
             android:orientation="vertical">
 
             <TextView
