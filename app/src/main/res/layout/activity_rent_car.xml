@@ -30,20 +30,22 @@
                 app:fontFamily="@font/roboto_regular"
                 android:text="@string/firstHeader_rent_your_auto"
                 android:textSize="16sp"
-                android:maxWidth="390dp"/>
+                android:maxWidth="390dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/first_advertisment"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/second_advertisment"
                 android:textSize="14sp" />
@@ -51,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/third_advertisment"
                 android:textSize="14sp" />
@@ -59,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/fourth_advertisment"
                 android:textSize="14sp" />
@@ -67,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/fifth_advertisment"
                 android:textSize="14sp" />
@@ -76,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="8dp"
                 app:fontFamily="@font/roboto_bold"
                 android:text="@string/why_we"
                 android:textSize="20sp"
@@ -88,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:minHeight="800dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="8dp"
                 android:layout_weight="1"
                 android:clickable="false"
                 tools:ignore="NestedScrolling">
@@ -101,7 +103,8 @@
                 android:background="@drawable/button_auto_parts"
                 android:text="Сдать авто"
                 android:layout_marginBottom="30dp"
-                android:onClick="rentCar"/>
+                android:onClick="rentCar"
+                android:textColor="@color/colorWhite"/>
         </LinearLayout>
     </ScrollView>
 

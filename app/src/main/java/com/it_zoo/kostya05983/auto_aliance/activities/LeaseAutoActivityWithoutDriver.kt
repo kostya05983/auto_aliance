@@ -42,7 +42,7 @@ class LeaseAutoActivityWithoutDriver : AbstractNavigation() {
         _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota Prius", R.drawable.car_new_prius_change, 1500)) // true
         _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai I20  1.4 MT 2016 г.в. ", R.drawable.hyunday_i20_change, 1200)) // true
         _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai Solaris new ", R.drawable.car_solaris_change, 1500)) // true
-        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai Tucson new", R.drawable.hunday_tucson, 2200))// no have image of this car?//this image trouble!
+        _mThumbIdsFirstGrid.add(DataCarFirstGrid("Hyundai Tucson new", R.drawable.picture, 2200))// no have image of this car?//this image trouble!
         _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Cerato new ", R.drawable.kia_serato_change, 1800))// true
         _mThumbIdsFirstGrid.add(DataCarFirstGrid("Toyota RAV4", R.drawable.car_toyota, 2300))// true
         _mThumbIdsFirstGrid.add(DataCarFirstGrid("Kia Sportage new", R.drawable.kio_sportage_change, 2500))//  true

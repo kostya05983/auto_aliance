@@ -27,7 +27,6 @@ class FranchisingActivity : AbstractNavigation() {
 
 
         fillCollection()
-/*        section_investor.dividerHeight = 0*/
         acrivity_franchising.adapter = FranshingAdapterListActivity(this)
 
 
@@ -49,10 +48,10 @@ class FranchisingActivity : AbstractNavigation() {
                         ),
                         "При выборе данной программы: ",
                         mutableListOf(
-                                "Предоставляем доступ к сайту, почте и корп. чату;",
-                                "Доступ к CRM-системе Вашего города;",
-                                "Диспетчерская и ежедневные заказы;",
-                                "Рекламные материалы;",
+                                "Предоставляем доступ к сайту, почте и корп. чату",
+                                "Доступ к CRM-системе Вашего города",
+                                "Диспетчерская и ежедневные заказы",
+                                "Рекламные материалы",
                                 "Обучение и помощь на всех этапах ведения проекта"
                         ),
                         "Паушальная сумма: 99 000 рублей.",
@@ -80,10 +79,10 @@ class FranchisingActivity : AbstractNavigation() {
                         ),
                         "При выборе данной программы: ",
                         mutableListOf(
-                                "Регистрируем ваше предприятие;",
-                                "Подготавливаем офис к открытию;",
-                                "Занимаетесь сбором необходимой информации;",
-                                "Знакомство с лизингом и программой \"Авто+1\";",
+                                "Регистрируем ваше предприятие",
+                                "Подготавливаем офис к открытию",
+                                "Занимаетесь сбором необходимой информации",
+                                "Знакомство с лизингом и программой \"Авто+1\"",
                                 "Обучение и помощь на всех этапах ведения проекта"
                         ),
                         "Паушальная сумма: 149 000 рублей.",
@@ -141,7 +140,7 @@ class FranchisingActivity : AbstractNavigation() {
         val linerlayout = view.parent as LinearLayout
 
         val title = linerlayout.getChildAt(0) as TextView
-        val textTitle = title.text;
+        val textTitle = title.text
         val city = intent.getStringExtra("city")
 
         val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
@@ -150,7 +149,6 @@ class FranchisingActivity : AbstractNavigation() {
 
             val message = String.format("Город: %s,\nВыбрано: %s,\nТелефон: %s",
                     city,textTitle,line1Number)
-            //TODO формируем сообщение и отправляем
             Thread(Runnable {
                 val mail = Mail()
                 mail.set_to(arrayOf("avtoalians.org@yandex.ru"))
@@ -203,7 +201,7 @@ class FranchisingActivity : AbstractNavigation() {
                     subtitle_1.text = collectionAgry[position].SubTitle
                     listSectionFirst.divider = null
                     listSectionFirst.adapter = FranshingAdapterListSection1(position, linerLayout.context)
-                    titleBetwenSection.text = collectionAgry[position].additionBetwenSections;
+                    titleBetwenSection.text = collectionAgry[position].additionBetwenSections
                     listSectionSecond.divider = null
                     listSectionSecond.adapter = FranshingAdapterListSection2(position, linerLayout.context)
                     price_1.text = collectionAgry[position].PaushPrice
@@ -264,7 +262,7 @@ class FranchisingActivity : AbstractNavigation() {
                 gridMain = convertView
             }
             val checkBox = gridMain.findViewById<CheckBox>(R.id.checkBox)
-            checkBox.isChecked = true;
+            checkBox.isChecked = true
 
             val item = gridMain.findViewById<TextView>(R.id.item_section_ui)
             item.text = collectionAgry[indexOfBlock].sectionFirst!![position]
@@ -292,7 +290,7 @@ class FranchisingActivity : AbstractNavigation() {
             }
 
             val checkBox = gridMain.findViewById<CheckBox>(R.id.checkBox)
-            checkBox.isChecked = true;
+            checkBox.isChecked = true
 
             val item = gridMain.findViewById<TextView>(R.id.item_section_ui)
             item.text = collectionAgry[indexOfBlock].sectionSecond!![position]
