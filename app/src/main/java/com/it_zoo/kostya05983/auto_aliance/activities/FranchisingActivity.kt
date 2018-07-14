@@ -168,8 +168,10 @@ class FranchisingActivity : AbstractNavigation() {
 
                     title_1.text = collectionAgry[position].Title
                     subtitle_1.text = collectionAgry[position].SubTitle
+                    listSectionFirst.divider = null
                     listSectionFirst.adapter = FranshingAdapterListSection1(position, linerLayout.context)
                     titleBetwenSection.text = collectionAgry[position].additionBetwenSections;
+                    listSectionSecond.divider = null
                     listSectionSecond.adapter = FranshingAdapterListSection2(position, linerLayout.context)
                     price_1.text = collectionAgry[position].PaushPrice
                     fixprice.text = collectionAgry[position].FixPrice
@@ -188,6 +190,7 @@ class FranchisingActivity : AbstractNavigation() {
 
                     title_1.text = collectionAgry[position].Title
                     subtitle_1.text = collectionAgry[position].SubTitle
+                    listSection.divider = null
                     listSection.adapter = FranshingAdapterListSection1(position, linerLayout.context)
                     price_1.text = collectionAgry[position].PaushPrice
                     fixprice.text = collectionAgry[position].FixPrice
@@ -199,7 +202,7 @@ class FranchisingActivity : AbstractNavigation() {
                     val title = linerLayout.getChildAt(0) as TextView
 
                     val listInvestor = (linerLayout.getChildAt(1) as LinearLayout).getChildAt(0) as ListView
-
+                    listInvestor.divider = null
 
                     title.text = collectionAgry[position].Title
                     listInvestor.adapter = FranshingAdapterInvestor(position, linerLayout.context)
