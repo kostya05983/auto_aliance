@@ -230,7 +230,9 @@ class FranchisingActivity : AbstractNavigation() {
                     val linerLayout = gridMain as LinearLayout
 
                     val title = linerLayout.getChildAt(0) as TextView
+
                     val listInvestor = (linerLayout.getChildAt(1) as LinearLayout).getChildAt(0) as ListView
+
 
                     title.text = collectionAgry[position].Title
                     listInvestor.adapter = FranshingAdapterInvestor(position, linerLayout.context)
