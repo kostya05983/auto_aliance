@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:minHeight="480dp"
+        android:minHeight="460dp"
         >
         <ListView
             android:id="@+id/section1_list_1"
