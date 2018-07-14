@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         tools:layout_marginTop="15dp"
         tools:layout_marginLeft="15dp"
-        tools:textSize="20dp"
-        tools:fontFamily="@font/roboto_mediumitalic"
+        tools:textSize="15sp"
+        tools:fontFamily="@font/roboto_regular"
         android:text="TextView" />
 </LinearLayout>
