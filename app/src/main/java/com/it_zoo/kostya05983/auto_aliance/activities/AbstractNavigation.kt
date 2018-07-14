@@ -22,10 +22,10 @@ abstract class AbstractNavigation : AppCompatActivity(), NavigationView.OnNaviga
                 val intent = Intent(this, BuyYourAutoActivity::class.java)
                 startActivity(intent)
             }
-//            R.id.nav_franchising -> {
-//                val intent = Intent(this, FranchisingActivity::class.java)
-//                startActivity(intent)
-//            }
+            R.id.nav_franchising -> {
+                val intent = Intent(this, FranchisingActivity::class.java)
+                startActivity(intent)
+            }
             R.id.nav_rent_car -> {
                 val intent = Intent(this, RentCarActivity::class.java)
                 startActivity(intent)

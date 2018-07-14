@@ -172,7 +172,7 @@ class FranchisingActivity : AbstractNavigation() {
                     price_1.text = collectionAgry[position].PaushPrice
                     fixprice.text = collectionAgry[position].FixPrice
 
-                    additionalInfo.text = if(collectionAgry[position].additionInfo!= null) collectionAgry[position].additionInfo else ""
+                    //additionalInfo.text = if(collectionAgry[position].additionInfo!= null) collectionAgry[position].additionInfo else ""
                 }
                 2->{
                     val linerLayout = gridMain as LinearLayout
@@ -226,7 +226,7 @@ class FranchisingActivity : AbstractNavigation() {
             val checkBox = gridMain.findViewById<CheckBox>(R.id.checkBox)
             checkBox.isChecked = true;
 
-            val item = gridMain.findViewById<TextView>(R.id.city_choose)
+            val item = gridMain.findViewById<TextView>(R.id.item_section_ui)
             item.text = collectionAgry[indexOfBlock].sectionFirst!![position]
 
             return gridMain
@@ -254,7 +254,7 @@ class FranchisingActivity : AbstractNavigation() {
             val checkBox = gridMain.findViewById<CheckBox>(R.id.checkBox)
             checkBox.isChecked = true;
 
-            val item = gridMain.findViewById<TextView>(R.id.city_choose)
+            val item = gridMain.findViewById<TextView>(R.id.item_section_ui)
             item.text = collectionAgry[indexOfBlock].sectionSecond!![position]
 
             return gridMain
