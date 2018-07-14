@@ -24,5 +24,12 @@
     <string name="fourth_advertisment">Кредитные тяжбы, запрет на регистрационные действия? - Не беда, звоните!</string>
     <string name="fifth_advertisment">Есть долги, давно не делали приобретения? - Звоните, поможем!</string>
     <string name="why_we">Почему мы?</string>
+    <string name="text_buy__auto_for_you_1">Компания АВТО-АЛЬЯНС предоставляет возможность приобрести автомобиль в рассрочку у дилера любой марки.</string>
+    <string name="text_buy_auto_for_you_2">Отказ в кредите? Автосалон предлагает купить машину с дополнительным оборудованием? Ваша работа неофициальная? Есть долги? Мы можем Вам помочь - авторассрочка для всех! У нас нет исключений! Приходите и заберите Ваш новый автомобиль уже сегодня!</string>
+    <string name="text_buy_auto_for_you_3">Мы работаем с плохой кредитной историей, такси и неофициальным трудоустройством.</string>
+    <string name="head_buy_auto_for_you_2">Возможность купить новый автомобиль в рассрочку</string>
+    <string name="text_button_buy_auto_for_you">Заказать звонок</string>
+    <string name="text_but_auto_for_you_block">Любой автомобиль! Без справок от работодателя! Лизинг юр. лицам! Лизинг физ. лицам!</string>
+    <string name="header_buy_auto_for_you_1">Купим вам автомобиль</string>
 
 </resources>

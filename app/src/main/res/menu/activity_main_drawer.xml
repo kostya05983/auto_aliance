@@ -19,15 +19,15 @@
         <item
             android:id ="@+id/nav_buy_your_auto"
             android:icon="@drawable/but_your_car_icon"
-            android:title="Купим ваш автомобиль" />
+            android:title="Купим вам автомобиль" />
         <item
             android:id="@+id/nav_auto_parts"
             android:icon="@drawable/auto_parts_icon"
             android:title="Автозапчасти" />
-        <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/settings_icon_three"
-            android:title="Настройки" />
+        <!--<item-->
+            <!--android:id="@+id/nav_settings"-->
+            <!--android:icon="@drawable/settings_icon_three"-->
+            <!--android:title="Настройки" />-->
 
 
     </group>

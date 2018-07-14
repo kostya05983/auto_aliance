@@ -5,16 +5,13 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import com.it_zoo.kostya05983.auto_aliance.DataCarSecondGrid
 import com.it_zoo.kostya05983.auto_aliance.Mail
 import com.it_zoo.kostya05983.auto_aliance.R
 import kotlinx.android.synthetic.main.activity_lease_auto_with_driver.*
 import android.telephony.TelephonyManager
-
+import android.view.*
 
 
 class LeaseAutoActivityWithDriver : AbstractNavigation() {
@@ -23,6 +20,8 @@ class LeaseAutoActivityWithDriver : AbstractNavigation() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_lease_auto_with_driver)
         fill()
 

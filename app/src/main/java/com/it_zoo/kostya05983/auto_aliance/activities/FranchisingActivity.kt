@@ -2,9 +2,7 @@ package com.it_zoo.kostya05983.auto_aliance.activities
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.*
 import com.it_zoo.kostya05983.auto_aliance.Franchising.DataFranchisinGrid
 import com.it_zoo.kostya05983.auto_aliance.R
@@ -17,7 +15,10 @@ class FranchisingActivity : AbstractNavigation() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_franchising)
+
 
         fillCollection()
         acrivity_franchising.adapter = FranshingAdapterListActivity(this)

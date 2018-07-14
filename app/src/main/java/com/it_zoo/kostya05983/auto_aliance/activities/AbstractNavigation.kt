@@ -34,10 +34,10 @@ abstract class AbstractNavigation : AppCompatActivity(), NavigationView.OnNaviga
                 val intent = Intent(this, AutoPartsActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_settings -> {
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
-            }
+//            R.id.nav_settings -> {
+//                val intent = Intent(this, SettingsActivity::class.java)
+//                startActivity(intent)
+//            }
             R.id.nav_view_choose_lease_auto -> {
                 val intent = Intent(this,ChooseLeaseAutoActivity::class.java)
                 startActivity(intent)

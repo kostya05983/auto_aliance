@@ -3,9 +3,7 @@ package com.it_zoo.kostya05983.auto_aliance.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.it_zoo.kostya05983.auto_aliance.R
@@ -17,6 +15,8 @@ class CitiesActivity : AbstractNavigation() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_cities)
         fill()
         nav_view_cities.setNavigationItemSelectedListener(this)
