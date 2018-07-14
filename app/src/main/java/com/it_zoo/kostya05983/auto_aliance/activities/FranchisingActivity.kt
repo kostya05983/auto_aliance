@@ -210,7 +210,7 @@ class FranchisingActivity : AbstractNavigation() {
                     price_1.text = collectionAgry[position].PaushPrice
                     fixprice.text = collectionAgry[position].FixPrice
 
-                    //additionalInfo.text = if(collectionAgry[position].additionInfo!= null) collectionAgry[position].additionInfo else ""
+                    additionalInfo.text = if(collectionAgry[position].additionInfo!= null) collectionAgry[position].additionInfo else ""
                 }
                 2->{
                     val linerLayout = gridMain as LinearLayout
